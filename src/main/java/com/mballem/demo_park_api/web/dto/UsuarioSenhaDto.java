@@ -8,11 +8,11 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 
-public class UsuarioResponseDto {
-    private long id;
-    private String username;
-    private String role;
+public class UsuarioSenhaDto {
+
+    private String senhaAtual;
+    private String novaSenha;
+    private String confirmaSenha;
+
 
 }
-
-
