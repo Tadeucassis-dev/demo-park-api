@@ -5,7 +5,9 @@ import com.mballem.demo_park_api.web.dto.UsuarioCreateDto;
 import com.mballem.demo_park_api.web.dto.UsuarioResponseDto;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
-import org.springframework.ui.Model;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UsuarioMapper {
 
@@ -24,5 +26,9 @@ public class UsuarioMapper {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.addMappings(props);
         return modelMapper.map(usuario, UsuarioResponseDto.class);
+    }
+
+    public static List<UsuarioResponseDto> dtoList(List<Usuario> usuarios) {
+        return usuarios.stream().map(user -> toDto(user)).collect(Collectors.toList());
     }
 }
