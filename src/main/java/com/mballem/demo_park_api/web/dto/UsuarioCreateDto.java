@@ -19,4 +19,5 @@ public class UsuarioCreateDto {
     @NotBlank
     @Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres", max = 6)
     private String password;
+
 }
